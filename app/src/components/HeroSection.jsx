@@ -88,9 +88,6 @@ export function HeroSection() {
             <div className="text-center">
               <div className="mb-6">
                 <div className="inline-block">
-                  <p className="text-gold text-[10px] md:text-xs tracking-[0.25em] uppercase mb-2">
-                    EVENTO
-                  </p>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider">
                     <span className="text-white">ESQUADRIA</span>{' '}
                     <span className="underline-gold"><span className="gradient-text-gold">MILIONÁRIA</span></span>
@@ -111,9 +108,6 @@ export function HeroSection() {
                     submitLabel="Participar gratuitamente"
                   />
                 </div>
-                <p className="text-muted text-[11px] md:text-xs uppercase tracking-wider">
-                  Esquadria Milionária — Vagas limitadas
-                </p>
               </div>
             </div>
           </AnimatedCard>
