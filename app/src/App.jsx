@@ -1,34 +1,20 @@
 import {
-  HeroSection,
-  VideoSection,
-  ParaQuemSection,
-  ParaQuemQuerSection,
-  AvisoSection,
-  OfertaSection,
-  SergioLimaSection,
-  FAQSection,
-  CTASection,
-  Footer,
+  HeroOrcamento,
+  BeneficiosSite,
+  FooterOrcamento,
 } from './components'
-import { submitLead } from './services/leads'
+import { submitOrcamento } from './services/orcamentos'
 
 function App() {
-  async function handleLeadSubmit(data) {
-    return submitLead(data)
+  async function handleOrcamentoSubmit(data) {
+    return submitOrcamento(data)
   }
 
   return (
     <main className="min-h-screen bg-background overflow-hidden">
-      <HeroSection onSubmit={handleLeadSubmit} />
-      <VideoSection />
-      <ParaQuemSection />
-      <ParaQuemQuerSection />
-      <AvisoSection />
-      <OfertaSection onSubmit={handleLeadSubmit} />
-      <SergioLimaSection />
-      <FAQSection />
-      <CTASection />
-      <Footer />
+      <HeroOrcamento onSubmit={handleOrcamentoSubmit} />
+      <BeneficiosSite />
+      <FooterOrcamento />
     </main>
   )
 }

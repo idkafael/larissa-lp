@@ -9,6 +9,10 @@
   --color-gold-light: #F5D060;
   --color-mustard: #EAA800;
   --color-muted: #e0e0e0;
+  /* Paleta LP orçamento (bege/bronze da referência) */
+  --color-bronze: #b8956b;
+  --color-bronze-light: #d4b896;
+  --color-sand: #9a7b5a;
 }
 
 @layer utilities {
@@ -32,11 +36,34 @@
     padding-bottom: 4px;
     border-bottom: 2px solid #D4A520;
   }
+  .shimmer-bronze {
+    position: relative;
+    display: inline-block;
+    color: var(--color-bronze);
+    background: linear-gradient(120deg, rgba(184,149,107,0.2), var(--color-bronze-light), rgba(184,149,107,0.2));
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer-bronze 2.4s ease-in-out infinite;
+  }
 }
 
 @keyframes border-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer-bronze {
+  0% {
+    background-position: -60% 0;
+  }
+  45% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 160% 0;
+  }
 }
 
 html {
