@@ -46,7 +46,7 @@ export function BeneficiosSite() {
   ]
 
   return (
-    <section className="relative w-full py-16 md:py-24 bg-background">
+    <section id="beneficios" className="relative w-full py-16 md:py-24 bg-background scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
           O site que sua prática merece
@@ -56,7 +56,11 @@ export function BeneficiosSite() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {itens.map((item, i) => (
-            <div key={i} className="relative">
+            <div
+              key={i}
+              className={`relative ${i === 0 ? 'scroll-mt-24' : ''}`}
+              id={i === 0 ? 'beneficio-autoridade' : undefined}
+            >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-bronze/45 via-bronze-light/30 to-transparent blur-[16px] opacity-90 pointer-events-none" />
               <TiltCard className="relative flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-surface border border-surface-light/50 hover:border-bronze/60 shadow-[0_0_22px_rgba(184,149,107,0.25)] hover:shadow-[0_0_36px_rgba(184,149,107,0.5)] transition-all duration-300 will-change-transform">
                   <div className="w-20 h-20 rounded-full flex items-center justify-center text-bronze border-2 border-bronze/50 bg-bronze/5 mb-5">

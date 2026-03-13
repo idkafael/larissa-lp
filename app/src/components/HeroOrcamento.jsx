@@ -12,6 +12,11 @@ export function HeroOrcamento({ onSubmit }) {
       Sua atuação em Blefaroplastia merece um espaço online que apresente sua trajetória, seus procedimentos e um canal direto para agendamento e dúvidas.
     </>
   )
+  const destaquesDesktop = [
+    'Sua trajetória',
+    'Seus procedimentos',
+    'Agendamento e dúvidas',
+  ]
 
   return (
     <section className="relative w-full lg:min-h-screen flex flex-col overflow-hidden bg-background pb-10">
@@ -29,42 +34,58 @@ export function HeroOrcamento({ onSubmit }) {
         <div className="relative z-10 -mt-30 px-4">
           <div className="mx-auto max-w-sm rounded-t-2xl bg-gradient-to-b from-bronze via-bronze-light/80 to-transparent p-[1px]">
             <div className="rounded-t-2xl bg-surface border border-b-0 border-surface-light/40 pt-5 px-4 pb-7 shadow-[0_0_30px_rgba(184,149,107,0.4)]">
-            <h1 className="text-2xl font-bold text-foreground text-center leading-tight mb-3">
-              {headline}
-            </h1>
-            <p className="text-muted text-sm leading-relaxed">
-              {bodyCopy}
-            </p>
+              <h1 className="text-2xl font-bold text-foreground text-center leading-tight mb-3">
+                {headline}
+              </h1>
+              <p className="text-muted text-sm leading-relaxed">
+                {bodyCopy}
+              </p>
+              <a
+                href="#beneficio-autoridade"
+                className="mt-5 inline-flex w-full justify-center rounded-full bg-bronze px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-background shadow-[0_0_24px_rgba(184,149,107,0.45)] transition-colors hover:bg-bronze-light"
+              >
+                Quero transmitir valor
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Desktop: grid imagem + texto | formulário */}
-      <div className="hidden lg:flex relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full max-w-6xl mx-auto">
-          <div>
+      {/* Desktop: imagem e card ocupam grande parte da tela, mesmo tamanho */}
+      <div className="hidden lg:flex relative z-10 w-full px-4 sm:px-6 py-8 items-center justify-center min-h-[calc(100vh-4rem)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center w-full max-w-7xl mx-auto h-[78vh] min-h-[520px]">
+          <div className="rounded-2xl overflow-hidden h-full">
             <img
-              src="/images/banner.png"
+              src="/images/banner2.png"
               alt=""
-              className="w-full mb-6 rounded-xl object-cover"
+              className="w-full h-full object-cover object-top"
             />
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight mb-6">
-              {headline}
-            </h1>
-            <p className="text-muted text-base md:text-lg leading-relaxed max-w-lg mb-8">
-              {bodyCopy}
-            </p>
           </div>
-          <div className="lg:pl-4">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full justify-center rounded-full bg-bronze px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-background shadow-[0_0_35px_rgba(184,149,107,0.45)] transition-colors hover:bg-bronze-light max-w-xs"
-            >
-              Falar no WhatsApp
-            </a>
+          <div className="flex">
+            <div className="w-full rounded-2xl bg-gradient-to-b from-bronze via-bronze-light/80 to-transparent p-[1px]">
+              <div className="rounded-2xl bg-surface border border-surface-light/40 p-6 md:p-8 shadow-[0_0_30px_rgba(184,149,107,0.4)]">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight mb-4">
+                  {headline}
+                </h1>
+                <p className="text-muted text-base md:text-lg leading-relaxed mb-6">
+                  {bodyCopy}
+                </p>
+                <ul className="flex flex-wrap gap-x-6 gap-y-2 mt-2 mb-6 text-muted">
+                  {destaquesDesktop.map((item, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-bronze/80" aria-hidden />
+                      <span className="text-sm md:text-base">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#beneficios"
+                  className="mt-4 inline-flex w-full justify-center rounded-full bg-bronze px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-background shadow-[0_0_35px_rgba(184,149,107,0.45)] transition-colors hover:bg-bronze-light"
+                >
+                  Quero transmitir valor
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
