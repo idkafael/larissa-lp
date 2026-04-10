@@ -125,8 +125,8 @@ export default function FAQ() {
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem', alignItems: 'start' }} className="faq-grid">
 
-          {/* Sticky header */}
-          <div ref={titleRef} style={{ position: 'sticky', top: '6rem' }}>
+          {/* Sticky só no desktop: em 1 coluna, sticky faz a lista rolar por baixo do título */}
+          <div ref={titleRef} className="faq-sticky-title">
             <motion.span
               initial={{ opacity: 0, y: 16 }}
               animate={titleInView ? { opacity: 1, y: 0 } : {}}
@@ -165,8 +165,18 @@ export default function FAQ() {
       </div>
 
       <style>{`
+        .faq-sticky-title {
+          align-self: start;
+        }
         @media (min-width: 900px) {
           .faq-grid { grid-template-columns: 0.85fr 1.15fr !important; }
+          .faq-sticky-title {
+            position: sticky;
+            top: 6rem;
+            z-index: 1;
+            padding-bottom: 0.5rem;
+            background: var(--color-bg-muted);
+          }
         }
       `}</style>
     </section>

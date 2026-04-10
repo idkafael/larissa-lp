@@ -1,7 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Medal, GraduationCap, Stethoscope, Heart } from '@phosphor-icons/react'
-import imgDoutora from '../assets/quem é.jpg'
 
 const credentials = [
   { icon: GraduationCap, label: 'Formação', value: 'Medicina, USP, Faculdade de Medicina de São Paulo' },
@@ -56,7 +55,7 @@ export default function AutoridadeMedica() {
                 }}
               >
                 <img
-                  src={imgDoutora}
+                  src="/images/larissa.jpg"
                   alt="Dra. Larissa Pinheiro, especialista em blefaroplastia"
                   style={{
                     position: 'absolute',
@@ -64,7 +63,7 @@ export default function AutoridadeMedica() {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    objectPosition: 'top',
+                    objectPosition: 'center top',
                   }}
                 />
 

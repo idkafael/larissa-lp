@@ -9,3 +9,6 @@ blefaroplastia-lp/
 .agents/
 skills-lock.json
 package-lock.workspace.json.bak
+
+# temporários de export de foto
+app/public/images/depoimentos/~tmp*

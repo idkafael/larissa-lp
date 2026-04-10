@@ -1,231 +1,354 @@
-import { useRef, useState } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { ArrowLeft, ArrowRight } from '@phosphor-icons/react'
-import imgAntes from '../assets/antes.png'
-import imgDepois from '../assets/depois.png'
-import imgAntes2 from '../assets/antes2.png'
-import imgDepois2 from '../assets/depois2.png'
+import { useRef, useState, useCallback, useEffect } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { CaretLeft, CaretRight } from '@phosphor-icons/react'
+import { DEPOIMENTOS_FILENAMES, depoimentoSrc } from '../data/depoimentosImages'
 
-const cases = [
-  {
-    id: 'caso-01',
-    antesImg: imgAntes,
-    depoisImg: imgDepois,
-    label: 'Caso Clínico',
-    tag: 'Blefaroplastia Superior Bilateral',
-    note: 'Paciente com excesso de pele palpebral bilateral causando aspecto de cansaço e assimetria. Realizada blefaroplastia superior com ressecção conservadora e incisão na dobra palpebral natural. Resultado com naturalidade e abertura do olhar.',
-    result: 'Resultado real, pós-operatório',
-  },
-  {
-    id: 'caso-02',
-    antesImg: imgAntes2,
-    depoisImg: imgDepois2,
-    label: 'Caso Clínico',
-    tag: 'Blefaroplastia Superior Bilateral',
-    note: 'Paciente com ptose palpebral superior bilateral e excesso de pele causando sensação de olhar pesado. Blefaroplastia superior realizada com técnica conservadora respeitando a expressão natural do olhar.',
-    result: 'Resultado real, pós-operatório',
-  },
-]
+const SLIDES = DEPOIMENTOS_FILENAMES.map((filename, index) => ({
+  id: `depo-${index}-${filename}`,
+  src: depoimentoSrc(filename),
+  filename,
+}))
 
-function PhotoSlot({ src, label, tag }) {
+const overlayGradient =
+  'linear-gradient(to top, rgba(61,53,48,0.72) 0%, rgba(61,53,48,0.25) 38%, transparent 68%)'
+
+function ReelSlide({ slide, isActive, slideRef }) {
   return (
-    <div style={{ position: 'relative' }}>
-      <div style={{
-        background: 'var(--color-bege-light)',
-        border: '1px solid var(--color-border)',
-        padding: '3px',
-        borderRadius: 'var(--radius-md)',
-      }}>
-        <div style={{
-          borderRadius: 'calc(var(--radius-md) - 3px)',
-          overflow: 'hidden',
-          aspectRatio: '1 / 1',
-          background: 'linear-gradient(135deg, #CEC5BA, #B8AFA4)',
+    <div
+      ref={slideRef}
+      data-reel-slide="1"
+      style={{
+        position: 'relative',
+        flex: '0 0 auto',
+        width: 'min(86vw, 520px)',
+        maxWidth: '100%',
+        height: 'min(72dvh, 640px)',
+        minHeight: '380px',
+        scrollSnapAlign: 'center',
+        scrollSnapStop: 'normal',
+        borderRadius: 'var(--radius-card)',
+        overflow: 'hidden',
+        background: 'var(--color-text)',
+        boxShadow: 'var(--shadow-card)',
+      }}
+    >
+      <img
+        src={slide.src}
+        alt={`Caso clínico, foto ${slide.filename}`}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center top',
+        }}
+        loading={isActive ? 'eager' : 'lazy'}
+        decoding="async"
+      />
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: overlayGradient,
+          pointerEvents: 'none',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 0,
+          padding: 'clamp(1rem, 4vw, 1.75rem)',
           display: 'flex',
-          alignItems: 'flex-end',
-          justifyContent: 'center',
-          position: 'relative',
-        }}>
-          {src && (
-            <img
-              src={src}
-              alt={`${label}, ${tag}`}
-              style={{
-                position: 'absolute',
-                inset: 0,
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'top',
-              }}
-              loading="lazy"
-            />
-          )}
-          {/* Label badge */}
-          <span style={{
-            position: 'relative',
-            zIndex: 1,
+          flexDirection: 'column',
+          gap: '0.5rem',
+        }}
+      >
+        <span className="eyebrow-pill" style={{ width: 'fit-content', alignSelf: 'flex-start', background: 'rgba(253,250,246,0.92)', color: 'var(--color-text)' }}>
+          Caso clínico
+        </span>
+        <span
+          style={{
             fontFamily: 'var(--font-body)',
             fontSize: '0.6875rem',
             fontWeight: 500,
-            letterSpacing: '0.12em',
+            letterSpacing: '0.14em',
             textTransform: 'uppercase',
-            color: 'var(--color-text)',
-            marginBottom: '0.875rem',
-            background: 'rgba(253,250,246,0.88)',
-            backdropFilter: 'blur(6px)',
-            padding: '0.3rem 0.75rem',
-            borderRadius: 'var(--radius-pill)',
-            border: '1px solid rgba(255,255,255,0.5)',
-          }}>
-            {label}
-          </span>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function CaseCard({ caso }) {
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.75rem' }} className="case-card-inner">
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.875rem' }}>
-        <PhotoSlot src={caso.antesImg} label="Antes" tag={caso.tag} />
-        <PhotoSlot src={caso.depoisImg} label="Depois" tag={caso.tag} />
-      </div>
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', flexWrap: 'wrap' }}>
-          <span className="eyebrow-pill">{caso.label}</span>
-          <span className="eyebrow-pill" style={{ background: 'var(--color-bege)', color: 'var(--color-text-muted)' }}>{caso.tag}</span>
-        </div>
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9375rem', fontWeight: 300, color: 'var(--color-text-muted)', lineHeight: 1.75 }}>
-          {caso.note}
+            color: 'rgba(253,250,246,0.88)',
+          }}
+        >
+          Blefaroplastia, resultados com autorização
+        </span>
+        <p
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '0.8125rem',
+            fontWeight: 300,
+            color: 'rgba(253,250,246,0.7)',
+            fontStyle: 'italic',
+            lineHeight: 1.5,
+            maxWidth: '36ch',
+          }}
+        >
+          Resultado real, pós-operatório. Use as setas ou deslize para o lado.
         </p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--color-mocha)', opacity: 0.6 }} />
-          <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.8125rem', color: 'var(--color-text-soft)', fontStyle: 'italic' }}>
-            {caso.result}
-          </span>
-        </div>
       </div>
     </div>
   )
 }
+
+const navBtn = (side) => ({
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  zIndex: 3,
+  width: '48px',
+  height: '48px',
+  borderRadius: '50%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  cursor: 'pointer',
+  border: '1px solid var(--color-border)',
+  boxShadow: 'var(--shadow-soft)',
+  transition: 'transform 0.2s var(--ease-elegant), opacity 0.2s, background 0.2s',
+  [side === 'left' ? 'left' : 'right']: 'clamp(4px, 1.5vw, 12px)',
+})
 
 export default function CasosClinicosSection() {
-  const [current, setCurrent] = useState(0)
+  const scrollRef = useRef(null)
+  const slideRefs = useRef([])
+  const [active, setActive] = useState(0)
   const titleRef = useRef(null)
   const titleInView = useInView(titleRef, { once: true, margin: '-80px' })
+  const scrollRaf = useRef(null)
 
-  const prev = () => setCurrent(c => (c - 1 + cases.length) % cases.length)
-  const next = () => setCurrent(c => (c + 1) % cases.length)
+  const setSlideRef = useCallback((index, el) => {
+    slideRefs.current[index] = el
+  }, [])
+
+  const updateActiveFromScroll = useCallback(() => {
+    const root = scrollRef.current
+    if (!root) return
+    const r = root.getBoundingClientRect()
+    const mid = r.left + r.width / 2
+    let best = 0
+    let bestDist = Infinity
+    slideRefs.current.forEach((el, i) => {
+      if (!el) return
+      const e = el.getBoundingClientRect()
+      const c = e.left + e.width / 2
+      const d = Math.abs(c - mid)
+      if (d < bestDist) {
+        bestDist = d
+        best = i
+      }
+    })
+    setActive(best)
+  }, [])
+
+  const onScroll = useCallback(() => {
+    if (scrollRaf.current != null) cancelAnimationFrame(scrollRaf.current)
+    scrollRaf.current = requestAnimationFrame(() => {
+      scrollRaf.current = null
+      updateActiveFromScroll()
+    })
+  }, [updateActiveFromScroll])
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return undefined
+    el.addEventListener('scroll', onScroll, { passive: true })
+    updateActiveFromScroll()
+    return () => {
+      el.removeEventListener('scroll', onScroll)
+      if (scrollRaf.current != null) cancelAnimationFrame(scrollRaf.current)
+    }
+  }, [onScroll, updateActiveFromScroll])
+
+  const scrollToIndex = useCallback((index) => {
+    const el = slideRefs.current[index]
+    el?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
+    })
+    setActive(index)
+  }, [])
+
+  const scrollBySlide = (dir) => {
+    const next = Math.min(Math.max(active + dir, 0), SLIDES.length - 1)
+    scrollToIndex(next)
+  }
+
+  const onKeyDown = (e) => {
+    if (e.key === 'ArrowRight') {
+      e.preventDefault()
+      scrollBySlide(1)
+    }
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault()
+      scrollBySlide(-1)
+    }
+  }
 
   return (
     <section id="casos" className="section" style={{ background: 'var(--color-bg-muted)' }}>
       <div className="container">
-        {/* Header */}
-        <div ref={titleRef} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 'clamp(2.5rem, 5vw, 4rem)', flexWrap: 'wrap', gap: '1.5rem' }}>
-          <div>
-            <motion.span
-              initial={{ opacity: 0, y: 16 }}
-              animate={titleInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="eyebrow-pill"
-            >
-              Casos Clínicos
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={titleInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="display-lg"
-              style={{ marginTop: '1rem' }}
-            >
-              Resultados que<br />
-              <em style={{ fontStyle: 'italic', color: 'var(--color-mocha)' }}>falam por si</em>
-            </motion.h2>
-          </div>
-
-          {/* Navigation */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={titleInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            style={{ display: 'flex', gap: '0.625rem' }}
+        <div ref={titleRef} style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
+          <motion.span
+            initial={{ opacity: 0, y: 16 }}
+            animate={titleInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="eyebrow-pill"
           >
-            <button
-              onClick={prev}
-              aria-label="Caso anterior"
-              style={{
-                width: '48px', height: '48px', borderRadius: '50%',
-                background: 'var(--color-bg-card)', border: '1px solid var(--color-border)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                cursor: 'pointer', transition: 'all 0.25s var(--ease-elegant)', color: 'var(--color-text)',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'var(--color-bege)'; e.currentTarget.style.transform = 'scale(1.05)' }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'var(--color-bg-card)'; e.currentTarget.style.transform = 'scale(1)' }}
-            >
-              <ArrowLeft size={18} weight="light" />
-            </button>
-            <button
-              onClick={next}
-              aria-label="Próximo caso"
-              style={{
-                width: '48px', height: '48px', borderRadius: '50%',
-                background: 'var(--color-text)', border: '1px solid transparent',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                cursor: 'pointer', transition: 'all 0.25s var(--ease-elegant)', color: 'var(--color-white)',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'var(--color-mocha-dark)'; e.currentTarget.style.transform = 'scale(1.05)' }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'var(--color-text)'; e.currentTarget.style.transform = 'scale(1)' }}
-            >
-              <ArrowRight size={18} weight="light" />
-            </button>
-          </motion.div>
+            Casos clínicos
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={titleInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="display-lg"
+            style={{ marginTop: '1rem' }}
+          >
+            Resultados que<br />
+            <em style={{ fontStyle: 'italic', color: 'var(--color-mocha)' }}>falam por si</em>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={titleInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.9375rem',
+              fontWeight: 300,
+              color: 'var(--color-text-muted)',
+              marginTop: '0.75rem',
+              maxWidth: '44ch',
+              lineHeight: 1.65,
+            }}
+          >
+            Deslize horizontalmente ou use as setas para ver mais casos.
+          </motion.p>
         </div>
 
-        {/* Case display */}
-        <div style={{
-          background: 'var(--color-bg-card)',
-          border: '1px solid var(--color-border-soft)',
-          borderRadius: 'var(--radius-card)',
-          padding: 'clamp(1.5rem, 4vw, 3rem)',
-          boxShadow: 'var(--shadow-soft)',
-        }}>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <CaseCard caso={cases[current]} />
-            </motion.div>
-          </AnimatePresence>
+        <div
+          style={{
+            background: 'var(--color-bg-card)',
+            border: '1px solid var(--color-border-soft)',
+            borderRadius: 'var(--radius-card)',
+            padding: 'clamp(0.75rem, 2vw, 1.25rem)',
+            boxShadow: 'var(--shadow-soft)',
+            position: 'relative',
+          }}
+        >
+          <button
+            type="button"
+            onClick={() => scrollBySlide(-1)}
+            disabled={active === 0}
+            aria-label="Foto anterior"
+            style={{
+              ...navBtn('left'),
+              background: 'var(--color-bg-card)',
+              color: 'var(--color-text)',
+              opacity: active === 0 ? 0.35 : 1,
+              pointerEvents: active === 0 ? 'none' : 'auto',
+            }}
+          >
+            <CaretLeft size={22} weight="light" />
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollBySlide(1)}
+            disabled={active === SLIDES.length - 1}
+            aria-label="Próxima foto"
+            style={{
+              ...navBtn('right'),
+              background: 'var(--color-text)',
+              color: 'var(--color-white)',
+              border: '1px solid transparent',
+              opacity: active === SLIDES.length - 1 ? 0.35 : 1,
+              pointerEvents: active === SLIDES.length - 1 ? 'none' : 'auto',
+            }}
+          >
+            <CaretRight size={22} weight="light" />
+          </button>
 
-          {/* Dots */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '2rem' }}>
-            {cases.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                aria-label={`Ir para caso ${i + 1}`}
-                style={{
-                  width: i === current ? '24px' : '8px',
-                  height: '8px', borderRadius: '4px',
-                  background: i === current ? 'var(--color-mocha)' : 'var(--color-nude-light)',
-                  border: 'none', cursor: 'pointer',
-                  transition: 'all 0.35s var(--ease-elegant)',
-                }}
+          <div
+            ref={scrollRef}
+            tabIndex={0}
+            role="region"
+            aria-roledescription="carrossel"
+            aria-label="Depoimentos, deslize para os lados ou use as setas"
+            onKeyDown={onKeyDown}
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'stretch',
+              gap: 'clamp(0.75rem, 3vw, 1.25rem)',
+              overflowX: 'auto',
+              overflowY: 'hidden',
+              scrollSnapType: 'x mandatory',
+              scrollBehavior: 'smooth',
+              WebkitOverflowScrolling: 'touch',
+              overscrollBehaviorX: 'contain',
+              scrollbarWidth: 'thin',
+              paddingTop: '4px',
+              paddingBottom: '8px',
+              paddingLeft: 'max(12px, calc(50% - min(43vw, 260px)))',
+              paddingRight: 'max(12px, calc(50% - min(43vw, 260px)))',
+              outline: 'none',
+              borderRadius: 'calc(var(--radius-card) - 8px)',
+            }}
+          >
+            {SLIDES.map((slide, i) => (
+              <ReelSlide
+                key={slide.id}
+                slide={slide}
+                isActive={i === active}
+                slideRef={(el) => setSlideRef(i, el)}
               />
             ))}
           </div>
+
+          <div style={{ marginTop: '1rem', padding: '0 0.25rem' }}>
+            <div
+              style={{
+                height: '4px',
+                borderRadius: '2px',
+                background: 'var(--color-bege)',
+                overflow: 'hidden',
+              }}
+              aria-hidden="true"
+            >
+              <div
+                style={{
+                  height: '100%',
+                  width: `${((active + 1) / SLIDES.length) * 100}%`,
+                  background: 'var(--color-mocha)',
+                  borderRadius: '2px',
+                  transition: 'width 0.35s var(--ease-elegant)',
+                }}
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Disclaimer */}
-        <p style={{ textAlign: 'center', fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-text-soft)', fontWeight: 300, maxWidth: '60ch', margin: '1.5rem auto 0' }}>
+        <p
+          style={{
+            textAlign: 'center',
+            fontFamily: 'var(--font-body)',
+            fontSize: '0.75rem',
+            color: 'var(--color-text-soft)',
+            fontWeight: 300,
+            maxWidth: '60ch',
+            margin: '1.5rem auto 0',
+            lineHeight: 1.5,
+          }}
+        >
           Fotos reais de pacientes com autorização. Resultados individuais podem variar conforme a anatomia de cada paciente e o planejamento cirúrgico realizado.
         </p>
       </div>
