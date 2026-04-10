@@ -72,7 +72,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" style={{ display: 'flex', flexDirection: 'column', gap: '1px', flexShrink: 0 }}>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.125rem', fontWeight: 500, color: 'var(--color-text)', letterSpacing: '-0.01em', lineHeight: 1 }}>
-              Dra. Larissa Pinheiro
+              Dra. Larissa Vasconcelos
             </span>
             <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.625rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--color-mocha)', fontWeight: 500 }}>
               Blefaroplastia

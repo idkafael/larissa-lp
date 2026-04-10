@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import { WhatsappLogo, ArrowRight } from '@phosphor-icons/react'
 
 const WA_NUMBER = '5511999999999'
-const WA_MESSAGE = 'Olá, Dra. Larissa! Gostaria de agendar uma avaliação para blefaroplastia.'
+const WA_MESSAGE = 'Olá, Dra. Larissa Vasconcelos! Gostaria de agendar uma avaliação para blefaroplastia.'
 const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`
 
 export default function Captacao() {
@@ -17,7 +17,7 @@ export default function Captacao() {
   const handleSubmit = e => {
     e.preventDefault()
     if (formData.nome && formData.telefone) {
-      const msg = `Olá, Dra. Larissa! Me chamo ${formData.nome} e gostaria de agendar uma avaliação. Telefone: ${formData.telefone}`
+      const msg = `Olá, Dra. Larissa Vasconcelos! Me chamo ${formData.nome} e gostaria de agendar uma avaliação. Telefone: ${formData.telefone}`
       window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank')
       setSent(true)
     }

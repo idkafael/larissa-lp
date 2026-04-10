@@ -56,7 +56,7 @@ export default function AutoridadeMedica() {
               >
                 <img
                   src="/images/larissa.jpg"
-                  alt="Dra. Larissa Pinheiro, especialista em blefaroplastia"
+                  alt="Dra. Larissa Vasconcelos, especialista em blefaroplastia"
                   style={{
                     position: 'absolute',
                     inset: 0,
@@ -86,7 +86,7 @@ export default function AutoridadeMedica() {
               </h2>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', fontWeight: 300, color: 'var(--color-text-muted)', lineHeight: 1.75, marginTop: '1rem', maxWidth: '48ch' }}>
                 Com mais de uma década dedicada exclusivamente à cirurgia de pálpebras,
-                a Dra. Larissa desenvolveu uma visão refinada sobre o que torna cada olhar único
+                a Dra. Larissa Vasconcelos desenvolveu uma visão refinada sobre o que torna cada olhar único
                 e como a técnica cirúrgica pode servir à individualidade de cada paciente.
               </p>
             </div>

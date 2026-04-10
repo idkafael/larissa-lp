@@ -149,7 +149,7 @@ export default function Hero() {
               >
                 <img
                   src="/images/prof.png"
-                  alt="Dra. Larissa Pinheiro, especialista em blefaroplastia"
+                  alt="Dra. Larissa Vasconcelos, especialista em blefaroplastia"
                   style={{
                     position: 'absolute',
                     inset: 0,

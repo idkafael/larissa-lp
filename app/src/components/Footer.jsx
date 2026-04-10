@@ -19,7 +19,7 @@ export default function Footer() {
         }}>
           <div>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 400, color: 'rgba(253,250,246,0.9)', letterSpacing: '-0.01em' }}>
-              Dra. Larissa Pinheiro
+              Dra. Larissa Vasconcelos
             </div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6875rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--color-nude)', fontWeight: 500, marginTop: '2px' }}>
               Especialista em Blefaroplastia, CRM-SP
@@ -62,7 +62,7 @@ export default function Footer() {
           gap: '0.75rem',
         }}>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', fontWeight: 300 }}>
-            © {new Date().getFullYear()} Dra. Larissa Pinheiro. Todos os direitos reservados.
+            © {new Date().getFullYear()} Dra. Larissa Vasconcelos. Todos os direitos reservados.
           </p>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', fontWeight: 300 }}>
             CFM, SBCP, membro titular de cirurgia plástica
