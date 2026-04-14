@@ -28,8 +28,9 @@ export default function Footer() {
 
           <nav style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
             {[
-              ['Procedimento', '#tecnica'],
-              ['Jornada', '#jornada'],
+              ['Procedimentos', '#procedimentos'],
+              ['Resultados', '#casos'],
+              ['Depoimentos', '#depoimentos'],
               ['Sobre', '#autoridade'],
               ['FAQ', '#faq'],
               ['Agendar', '#captacao'],

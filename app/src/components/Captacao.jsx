@@ -70,7 +70,7 @@ export default function Captacao() {
             </h2>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', fontWeight: 300, color: 'var(--color-text-muted)', lineHeight: 1.75, marginTop: '1.25rem', maxWidth: '46ch' }}>
               A avaliação é o momento em que entendo o seu olhar, seus objetivos e
-              se a blefaroplastia é a melhor indicação para você. Sem pressa, sem compromisso.
+              se a blefaroplastia ou outros procedimentos é a melhor indicação para você.
             </p>
 
             <a

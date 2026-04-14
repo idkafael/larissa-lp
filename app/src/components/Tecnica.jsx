@@ -7,7 +7,7 @@ const blocks = [
     tag: 'O que é',
     title: 'Cirurgia de precisão no olhar',
     text: 'A blefaroplastia é um procedimento cirúrgico que atua sobre as pálpebras superiores, inferiores ou ambas, removendo ou reposicionando o excesso de pele, músculo e gordura que se acumula com o tempo. O resultado é um olhar mais descansado, harmônico e jovial, sem alterar a expressão natural do rosto.',
-    checks: ['Procedimento ambulatorial', 'Anestesia local com sedação', 'Cicatriz discreta e imperceptível'],
+    checks: ['Cirurgia realizada com segurança em Day Hospital', 'Anestesia local com sedação', 'Cicatriz discreta e camuflada nas dobras naturais dos olhos'],
   },
   {
     tag: 'Pálpebra Superior',
@@ -18,8 +18,8 @@ const blocks = [
   {
     tag: 'Pálpebra Inferior',
     title: 'Bolsas que envelhecem o olhar',
-    text: 'As bolsas abaixo dos olhos surgem quando a gordura natural da órbita ocular se projeta para frente, perdendo o suporte dos tecidos. A blefaroplastia inferior reposiciona ou remove essas bolsas com sutileza, eliminando o aspecto de cansaço crônico sem criar um resultado artificial.',
-    checks: ['Sem cicatriz visível (transconjuntival)', 'Resultado natural e duradouro', 'Combinável com outras técnicas'],
+    text: 'As bolsas inferiores promovem um aspecto de cansaço. Elas surgem quando a gordura natural da órbita ocular se projeta para frente, perdendo o suporte dos tecidos. A blefaroplastia inferior reposiciona ou remove essas bolsas com sutileza, eliminando o aspecto de cansaço crônico sem criar um resultado artificial.',
+    checks: ['Cicatriz discreta abaixo dos cílios ou sem cicatriz (via transconjutival)', 'Resultado natural e duradouro', 'Combinável com outras técnicas'],
   },
   {
     tag: 'Avaliação',

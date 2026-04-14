@@ -10,7 +10,7 @@ const SLIDES = DEPOIMENTOS_FILENAMES.map((filename, index) => ({
 }))
 
 const overlayGradient =
-  'linear-gradient(to top, rgba(61,53,48,0.72) 0%, rgba(61,53,48,0.25) 38%, transparent 68%)'
+  'linear-gradient(to top, rgba(61,53,48,0.55) 0%, rgba(61,53,48,0.1) 22%, transparent 40%)'
 
 function ReelSlide({ slide, isActive, slideRef }) {
   return (
@@ -61,40 +61,28 @@ function ReelSlide({ slide, isActive, slideRef }) {
           left: 0,
           right: 0,
           bottom: 0,
-          padding: 'clamp(1rem, 4vw, 1.75rem)',
+          padding: 'clamp(0.5rem, 2vw, 0.75rem)',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'row',
+          alignItems: 'center',
           gap: '0.5rem',
         }}
       >
-        <span className="eyebrow-pill" style={{ width: 'fit-content', alignSelf: 'flex-start', background: 'rgba(253,250,246,0.92)', color: 'var(--color-text)' }}>
+        <span className="eyebrow-pill" style={{ width: 'fit-content', background: 'rgba(253,250,246,0.92)', color: 'var(--color-text)', fontSize: '0.65rem', padding: '0.2rem 0.6rem' }}>
           Caso clínico
         </span>
         <span
           style={{
             fontFamily: 'var(--font-body)',
-            fontSize: '0.6875rem',
+            fontSize: '0.625rem',
             fontWeight: 500,
-            letterSpacing: '0.14em',
+            letterSpacing: '0.1em',
             textTransform: 'uppercase',
-            color: 'rgba(253,250,246,0.88)',
+            color: 'rgba(253,250,246,0.85)',
           }}
         >
-          Blefaroplastia, resultados com autorização
+          Blefaroplastia
         </span>
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '0.8125rem',
-            fontWeight: 300,
-            color: 'rgba(253,250,246,0.7)',
-            fontStyle: 'italic',
-            lineHeight: 1.5,
-            maxWidth: '36ch',
-          }}
-        >
-          Resultado real, pós-operatório. Use as setas ou deslize para o lado.
-        </p>
       </div>
     </div>
   )

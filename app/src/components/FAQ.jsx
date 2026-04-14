@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: 'Quando vejo os resultados definitivos?',
-    a: 'Os principais resultados já são visíveis a partir de 3 a 4 semanas. O resultado definitivo, com a resolução total do edema e o amadurecimento das cicatrizes, se consolida entre 2 e 3 meses após a cirurgia.',
+    a: 'Os principais resultados já são visíveis a partir de 3 a 4 semanas. O resultado definitivo, com a resolução total do edema e o amadurecimento das cicatrizes, se consolida em torno de 90 dias após a cirurgia.',
   },
   {
     q: 'A blefaroplastia corrige as bolsas abaixo dos olhos?',

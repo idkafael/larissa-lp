@@ -21,7 +21,7 @@ const benefits = [
   {
     icon: Sparkle,
     title: 'Sem bolsas abaixo dos olhos',
-    desc: 'As bolsas inferiores envelhecem o olhar. A blefaroplastia inferior corrige esse volume com precisão e sutileza.',
+    desc: 'As bolsas inferiores promovem um aspecto de cansaço.',
   },
   {
     icon: Smiley,

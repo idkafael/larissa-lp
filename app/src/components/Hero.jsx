@@ -104,8 +104,8 @@ export default function Hero() {
               }}
             >
               {[
-                { num: '12+', label: 'Anos de experiência' },
-                { num: '2.400+', label: 'Cirurgias realizadas' },
+                { num: '+9', label: 'Anos de experiência' },
+                { num: '+ 1.200', label: 'Cirurgias realizadas' },
                 { num: '100%', label: 'Foco em pálpebras' },
               ].map(stat => (
                 <div key={stat.label}>

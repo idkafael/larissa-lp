@@ -5,7 +5,7 @@ const steps = [
   {
     num: '01',
     label: 'Avaliação',
-    title: 'Consulta presencial completa',
+    title: 'Primeira avaliação on-line ou consulta presencial completa',
     desc: 'Análise das pálpebras, estrutura óssea e pele. Conversa sobre expectativas, objetivos e histórico de saúde.',
   },
   {
@@ -18,7 +18,7 @@ const steps = [
     num: '03',
     label: 'Cirurgia',
     title: 'Procedimento cirúrgico',
-    desc: 'Realizado em ambiente hospitalar, com anestesia local e sedação. Dura em média 1 hora. Alta no mesmo dia.',
+    desc: 'Realizado em ambiente hospitalar, com anestesia local e sedação. Duração de 1 a 2:30h. Alta no mesmo dia.',
   },
   {
     num: '04',
@@ -30,7 +30,7 @@ const steps = [
     num: '05',
     label: 'Resultado',
     title: 'Olhar que se renova',
-    desc: 'Os resultados definitivos se consolidam entre 30 e 60 dias. Natural, duradouro e compatível com o seu rosto.',
+    desc: 'Os resultados definitivos se consolidam em torno de 90 dias. Natural, duradouro e compatível com o seu rosto.',
   },
   {
     num: '06',

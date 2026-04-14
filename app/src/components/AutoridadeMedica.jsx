@@ -1,12 +1,14 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Medal, GraduationCap, Stethoscope, Heart } from '@phosphor-icons/react'
+import { Medal, GraduationCap, Stethoscope, Heart, Globe, Certificate, Users } from '@phosphor-icons/react'
 
 const credentials = [
-  { icon: GraduationCap, label: 'Formação', value: 'Medicina, USP, Faculdade de Medicina de São Paulo' },
-  { icon: Medal, label: 'Especialização', value: 'Cirurgia Plástica, residência no Hospital das Clínicas (HCFMUSP)' },
-  { icon: Stethoscope, label: 'Titulação', value: 'Membro Titular da Sociedade Brasileira de Cirurgia Plástica (SBCP)' },
-  { icon: Heart, label: 'Foco clínico', value: 'Blefaroplastia e cirurgia de rejuvenescimento facial com ênfase em naturalidade' },
+  { icon: GraduationCap, label: 'Formação', value: 'Formada em Medicina pela EBMSP (Escola Bahiana de Medicina e Saúde Pública)' },
+  { icon: Stethoscope, label: 'Residência', value: 'Residência em Oftalmologia pela UFBA (HUPES)' },
+  { icon: Medal, label: 'Fellowship', value: 'Fellowship em Cirurgia Plástica Ocular pela UFBA (HUPES)' },
+  { icon: Certificate, label: 'Titulação', value: 'Título de Oftalmologista pelo Conselho Brasileiro de Oftalmologia' },
+  { icon: Globe, label: 'Internacional', value: 'Observership em Plástica Ocular no Stein Eye Hospital - University of California (UCLA)' },
+  { icon: Users, label: 'Sociedades', value: 'Membro da Sociedade Brasileira de Cirurgia Plástica Ocular (SBCPO)' },
 ]
 
 export default function AutoridadeMedica() {
@@ -85,7 +87,7 @@ export default function AutoridadeMedica() {
                 Especialização<br />que <em style={{ fontStyle: 'italic', color: 'var(--color-mocha)' }}>faz a diferença</em>
               </h2>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.0625rem', fontWeight: 300, color: 'var(--color-text-muted)', lineHeight: 1.75, marginTop: '1rem', maxWidth: '48ch' }}>
-                Com mais de uma década dedicada exclusivamente à cirurgia de pálpebras,
+                Com quase uma década dedicada exclusivamente à cirurgia de pálpebras,
                 a Dra. Larissa Vasconcelos desenvolveu uma visão refinada sobre o que torna cada olhar único
                 e como a técnica cirúrgica pode servir à individualidade de cada paciente.
               </p>
