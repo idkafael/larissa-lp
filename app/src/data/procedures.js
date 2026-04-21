@@ -33,10 +33,10 @@ export const PROCEDURES_DATA = {
 
     benefits: [
       'Olhar visualmente mais jovem e descansado',
-      'Cicatriz na dobra natural (imperceptível)',
+      'Cicatriz discreta na dobra natural dos olhos',
       'Melhora do campo visual nos casos funcionais',
       'Resultado natural — sem aparência operada',
-      'Anestesia local com sedação leve, sem internação',
+      'Anestesia local e sedação em hospital dia',
       'Resultado definitivo e de longa duração',
     ],
 
@@ -64,7 +64,6 @@ export const PROCEDURES_DATA = {
 
     forWho: [
       { symptom: 'Bolsas persistentes abaixo dos olhos', detail: 'Saliências de gordura que aparecem independente do sono ou da hidratação.' },
-      { symptom: 'Olheiras estruturais', detail: 'Sulcos profundos ou sombras que nenhum corretivo disfarça completamente.' },
       { symptom: 'Pele flácida na pálpebra inferior', detail: 'Excesso de pele que forma rugas e dobras abaixo do olho.' },
       { symptom: 'Aspecto envelhecido do olhar', detail: 'A região inferior dos olhos envelhece o rosto mesmo quando o restante está jovem.' },
     ],
@@ -94,8 +93,7 @@ export const PROCEDURES_DATA = {
 
     faq: [
       { q: 'Existe cicatriz visível?', a: 'Depende da via de acesso. Na via transconjuntival (incisão interna), não há cicatriz externa. Na via externa, a incisão fica na linha de cílios inferiores, tornando-se imperceptível após cicatrização.' },
-      { q: 'Resolve as olheiras roxas também?', a: 'A blefaroplastia inferior trata bolsas e excesso de pele. Olheiras vasculares (manchas roxas) podem requerer tratamentos complementares, avaliados individualmente.' },
-      { q: 'Pode ser feita junto com a blefaroplastia superior?', a: 'Sim. A blefaroplastia estruturada combina os dois procedimentos em uma única cirurgia, com resultado ainda mais completo.' },
+      { q: 'Pode ser feita junto com a blefaroplastia superior?', a: 'Sim. A blefaroplastia inferior e a superior podem ser realizadas juntas em uma única cirurgia, proporcionando um rejuvenescimento completo da região dos olhos com um único período de recuperação.' },
     ],
   },
 
@@ -103,44 +101,44 @@ export const PROCEDURES_DATA = {
     slug: 'blefaroplastia-estruturada',
     tag: 'Laser',
     name: 'Blefaroplastia Estruturada a laser',
-    hook: 'Quando o cansaço está em cima e embaixo dos olhos ao mesmo tempo.',
+    hook: 'Quando a pálpebra pesa e a musculatura precisa de reforço.',
     heroDesc:
-      'A blefaroplastia estruturada é o procedimento mais completo para o rejuvenescimento do olhar: combina a correção das pálpebras superior e inferior em uma única cirurgia, com redistribuição de gordura e resultado verdadeiramente harmonioso.',
+      'A blefaroplastia estruturada é a união da blefaroplastia superior com a correção da ptose palpebral. Ela remove o excesso de pele e também ajusta e reforça a musculatura responsável pela abertura do olho.',
 
     forWho: [
-      { symptom: 'Pálpebras superiores e inferiores comprometidas', detail: 'Excesso de pele na parte de cima e bolsas ou flacidez embaixo ao mesmo tempo.' },
-      { symptom: 'Rejuvenescimento global do olhar', detail: 'Quem quer transformar a região dos olhos de forma completa e duradoura.' },
-      { symptom: 'Perda de volume nas pálpebras', detail: 'Olhar encovado ou com volume mal distribuído, que pode ser redistribuído durante a cirurgia.' },
-      { symptom: 'Uma única recuperação', detail: 'Preferência por resolver tudo de uma vez, com apenas um período de pós-operatório.' },
+      { symptom: 'Pálpebra superior caída', detail: 'Sensação de pálpebras pesadas que cobrem parte da íris ou pupila e interferem na visão.' },
+      { symptom: 'Excesso de pele', detail: 'Associação de flacidez na pálpebra superior com fraqueza muscular.' },
+      { symptom: 'Esforço visual e cansaço', detail: 'Dor de cabeça e cansaço ao longo do dia por tentar manter os olhos abertos forçando a testa.' },
+      { symptom: 'Assimetrias', detail: 'Uma pálpebra visivelmente mais baixa que a outra.' },
     ],
 
     steps: [
-      { num: '01', title: 'Planejamento cirúrgico integrado', desc: 'Avaliação completa das quatro pálpebras, harmonia facial e definição do plano cirúrgico personalizado.' },
-      { num: '02', title: 'Cirurgia superior com laser', desc: 'Remoção do excesso de pele superior com incisão na dobra natural da pálpebra.' },
-      { num: '03', title: 'Correção inferior com laser', desc: 'Remoção ou redistribuição da gordura das pálpebras inferiores, com ou sem retirada de pele.' },
-      { num: '04', title: 'Acompanhamento detalhado', desc: 'Protocolo pós-operatório completo para garantir a melhor recuperação e resultado final.' },
+      { num: '01', title: 'Avaliação da musculatura', desc: 'Exame detalhado para identificar se existe ptose, seu grau e a melhor técnica cirúrgica.' },
+      { num: '02', title: 'Incisão na dobra natural', desc: 'Incisão a laser na mesma dobra natural da pálpebra para correção de pele e acesso à musculatura.' },
+      { num: '03', title: 'Correção estrutural', desc: 'Reforço ou reajuste da musculatura elevadora para proporcionar uma abertura palpebral natural e harmônica.' },
+      { num: '04', title: 'Recuperação acompanhada', desc: 'Orientações precisas e protocolos adequados para melhor cicatrização e acomodação da pálpebra.' },
     ],
 
     benefits: [
-      'Rejuvenescimento completo da região dos olhos',
-      'Resultado mais harmonioso que procedimentos separados',
-      'Apenas um período de recuperação',
-      'Redistribuição de volume para olhar natural',
-      'Cicatrizes discritas na dobra natural e linha de cílios',
-      'Transformação expressiva com resultado sutil e elegante',
+      'Abertura e leveza no olhar',
+      'Melhora funcional da visão',
+      'Remoção de pele associada com reposicionamento muscular',
+      'Redução de assimetrias visuais',
+      'Cicatriz em região de dobra natural, não aparente',
+      'Alívio do esforço do músculo da testa',
     ],
 
     recovery: [
-      { period: '1ª semana', icon: '🌙', desc: 'Maior inchaço e hematomas por envolver as quatro pálpebras. Repouso rigoroso e compressas.' },
-      { period: '2ª semana', icon: '🌤', desc: 'Melhora progressiva. Possível retorno a atividades leves ao final da semana.' },
-      { period: '1º mês', icon: '☀️', desc: 'Resultado já visível e bastante satisfatório. Cicatrizes em maturação.' },
-      { period: '3 a 6 meses', icon: '✨', desc: 'Resultado final. Olhar completamente renovado, harmonioso e natural.' },
+      { period: '1ª semana', icon: '🌙', desc: 'Inchaço da pálpebra. É comum que o olho demore mais a recomeçar a abrir normalmente nos primeiros dias.' },
+      { period: '2ª semana', icon: '🌤', desc: 'O edema principal reduz drasticamente. Retorno progressivo à rotina sem atividades intensas.' },
+      { period: '1º mês', icon: '☀️', desc: 'Resultados evidentes, olhar mais aberto e leveza recuperada. Cicatriz discreta.' },
+      { period: '3 a 6 meses', icon: '✨', desc: 'Cicatriz inaparente e maturada. Harmonização total das estruturas palpebrais.' },
     ],
 
     faq: [
-      { q: 'Quanto tempo dura a cirurgia?', a: 'Em média de 1h30 a 2h30, dependendo da complexidade de cada caso. É realizada em ambiente ambulatorial, com alta no mesmo dia.' },
-      { q: 'O resultado é muito exagerado?', a: 'Não. O objetivo da blefaroplastia estruturada é um resultado harmonioso: transformador o suficiente para rejuvenescer, sutil o suficiente para não parecer operado.' },
-      { q: 'Vale mais a pena fazer junto ou separado?', a: 'Para a maioria dos casos, fazer as duas pálpebras juntas traz resultado mais harmônico, apenas um período de recuperação e custo global menor.' },
+      { q: 'A cicatriz é diferente da blefaroplastia comum?', a: 'Não. Usamos exatamente a mesma incisão da blefaroplastia superior, localizada na dobra natural dos olhos, tornando-se imperceptível ao longo do tempo.' },
+      { q: 'Pode ser realizada na pálpebra inferior também?', a: 'Sim. Havendo indicação, a blefaroplastia inferior para remoção de bolsas pode ser adicionada em uma única cirurgia para rejuvenescimento global do olhar.' },
+      { q: 'O pós-operatório é mais demorado?', a: 'O inchaço inicial pode ser ligeiramente mais aparente ou prolongado que a blefaroplastia exclusiva de pele, pois manipulamos os músculos. Porém a recuperação transcorre de forma perfeitamente segura com as mesmas recomendações principais.' },
     ],
   },
 
@@ -150,7 +148,7 @@ export const PROCEDURES_DATA = {
     name: 'Correção de Ptose Palpebral',
     hook: 'A pálpebra caída não é apenas estética — ela pode comprometer sua visão.',
     heroDesc:
-      'A ptose palpebral é a queda da pálpebra superior por fraqueza do músculo elevador. A correção cirúrgica restaura a posição normal da pálpebra, recuperando o campo visual e devolvendo a expressão natural do olhar.',
+      'Ptose Palpebral: a correção cirúrgica melhora o posicionamento palpebral e abertura ocular, promovendo maior harmonia e simetria entre os olhos.',
 
     forWho: [
       { symptom: 'Pálpebra que cobre parcialmente a pupila', detail: 'A pálpebra caída interfere diretamente na visão, bloqueando parte do campo visual superior.' },
@@ -161,30 +159,29 @@ export const PROCEDURES_DATA = {
 
     steps: [
       { num: '01', title: 'Diagnóstico preciso', desc: 'Avaliação do grau de ptose, função do músculo elevador e impacto visual — essencial para escolher a técnica correta.' },
-      { num: '02', title: 'Escolha da técnica cirúrgica', desc: 'Ressecção do músculo elevador, plicatura ou suspensão frontal — definida de acordo com a causa e gravidade da ptose.' },
-      { num: '03', title: 'Cirurgia sob anestesia local', desc: 'Procedimento ambulatorial, com precisão para reposicionar a pálpebra na altura correta e garantir simetria entre os olhos.' },
+      { num: '02', title: 'Escolha da técnica cirúrgica', desc: 'Conjuntivomullerectomia, reinserção ou ressecção do elevador, suspensão frontal — definida de acordo com a causa e gravidade da ptose.' },
+      { num: '03', title: 'Cirurgia sob anestesia local', desc: 'Procedimento em hospital dia, sob anestesia local e sedação, com precisão para reposicionar a pálpebra na altura correta e garantir simetria entre os olhos.' },
       { num: '04', title: 'Ajustes e acompanhamento', desc: 'O pós-operatório inclui avaliações frequentes para monitorar o resultado e garantir a melhor simetria possível.' },
     ],
 
     benefits: [
-      'Recuperação do campo visual obstruído',
+      'Melhora do campo visual',
       'Simetria entre as pálpebras',
       'Eliminação do esforço para manter os olhos abertos',
       'Melhora expressiva da autoestima e da expressão facial',
       'Pode ter cobertura de planos de saúde (casos funcionais)',
-      'Resultado definitivo e estável',
     ],
 
     recovery: [
       { period: '1ª semana', icon: '🌙', desc: 'Inchaço e hematoma esperados. A pálpebra pode parecer excessivamente elevada no início — é normal.' },
       { period: '2ª semana', icon: '🌤', desc: 'Estabilização progressiva da posição da pálpebra. Melhora visível do inchaço.' },
       { period: '1º mês', icon: '☀️', desc: 'Resultado bem definido. Pequenos ajustes de simetria podem ser avaliados nesta fase.' },
-      { period: '3 a 6 meses', icon: '✨', desc: 'Resultado final consolidado. Pálpebra estável, simétrica e com abertura natural.' },
+      { period: '3 a 6 meses', icon: '✨', desc: 'Resultado final com melhora da simetria entre os olhos e posicionamento palpebral.' },
     ],
 
     faq: [
       { q: 'A cirurgia tem cobertura de plano de saúde?', a: 'Em casos onde a ptose compromete a visão (funcional), muitos planos cobrem o procedimento. A Dra. Larissa orienta sobre a documentação necessária na consulta.' },
-      { q: 'A pálpebra pode cair novamente?', a: 'Com a técnica adequada ao tipo de ptose, o resultado é estável e duradouro. Casos raros de recidiva existem, mas são manejáveis com acompanhamento.' },
+      { q: 'A pálpebra pode cair novamente?', a: 'É algo que pode acontecer na fase inicial ou após algum tempo de cirurgia. O acompanhamento com um médico especialista define as melhores intervenções no tempo correto para um melhor resultado.' },
       { q: 'Crianças podem fazer?', a: 'Sim. A ptose congênita em crianças pode requerer correção precoce para evitar ambliopia (olho preguiçoso). A Dra. Larissa avalia cada caso individualmente.' },
     ],
   },
@@ -206,9 +203,8 @@ export const PROCEDURES_DATA = {
 
     steps: [
       { num: '01', title: 'Avaliação do posicionamento ideal', desc: 'Análise do arco, altura e posição das sobrancelhas em relação à anatomia do seu rosto para definir o resultado mais harmônico.' },
-      { num: '02', title: 'Escolha da técnica', desc: 'Lifting endoscópico, coronal ou temporal — a técnica é escolhida conforme o grau de queda e a estrutura do rosto.' },
-      { num: '03', title: 'Procedimento cirúrgico', desc: 'Reposicionamento e fixação da sobrancelha na altura ideal, com incisões discretas no couro cabeludo ou linha de implantação.' },
-      { num: '04', title: 'Pós-operatório e resultado', desc: 'Acompanhamento para garantir a fixação correta e o resultado mais natural e simétrico possível.' },
+      { num: '02', title: 'Procedimento cirúrgico', desc: 'Reposicionamento e fixação da sobrancelha na altura ideal, com incisões discretas, rentes às sobrancelhas.' },
+      { num: '03', title: 'Pós-operatório e resultado', desc: 'Acompanhamento para garantir a fixação correta e o resultado mais natural e simétrico possível.' },
     ],
 
     benefits: [
@@ -221,7 +217,7 @@ export const PROCEDURES_DATA = {
     ],
 
     recovery: [
-      { period: '1ª semana', icon: '🌙', desc: 'Inchaço e tensão na região da testa e sobrancelhas. Cabelo cobre as incisões. Repouso recomendado.' },
+      { period: '1ª semana', icon: '🌙', desc: 'Inchaço e tensão na região da testa e sobrancelhas. Repouso recomendado.' },
       { period: '2ª semana', icon: '🌤', desc: 'Redução do inchaço. Possível retorno ao trabalho com cuidados simples.' },
       { period: '1º mês', icon: '☀️', desc: 'Posicionamento estabilizado. Expressão mais natural e resultado bem definido.' },
       { period: '3 a 6 meses', icon: '✨', desc: 'Resultado final. Rosto com aparência jovem, natural e em harmonia.' },
@@ -230,7 +226,7 @@ export const PROCEDURES_DATA = {
     faq: [
       { q: 'O lifting deixa a expressão artificial?', a: 'Não, quando bem planejado. A Dra. Larissa analisa cuidadosamente a posição ideal para cada rosto — o objetivo é elevar sem exagerar, preservando a expressão natural.' },
       { q: 'Pode ser feito junto com a blefaroplastia?', a: 'Sim. A combinação dos dois procedimentos em uma única cirurgia é frequentemente recomendada para um resultado mais completo e harmonioso.' },
-      { q: 'As incisões ficam visíveis?', a: 'As incisões são feitas no couro cabeludo ou na linha de implantação do cabelo, ficando escondidas pelo próprio cabelo após a cicatrização.' },
+      { q: 'As incisões ficam visíveis?', a: 'Apesar do processo de cicatrização ser muito individual, com os cuidados adequados as cicatrizes costumam ficar discretas ou imperceptíveis após algum tempo de cirurgia.' },
     ],
   },
 
@@ -240,12 +236,11 @@ export const PROCEDURES_DATA = {
     name: 'Ressurfacing palpebral com laser de CO₂',
     hook: 'As rugas finas ao redor dos olhos têm tratamento sem cirurgia.',
     heroDesc:
-      'O ressurfacing palpebral com laser de CO₂ fracionado renova a superfície da pele das pálpebras — eliminando rugas finas, manchas e textura irregular de forma precisa, controlada e com recuperação programada.',
+      'O ressurfacing palpebral com laser de CO₂ fracionado renova a superfície da pele das pálpebras — amenizando rugas finas, manchas e textura irregular de forma precisa, controlada e com recuperação programada.',
 
     forWho: [
-      { symptom: 'Rugas finas ao redor dos olhos', detail: '"Pés de galinha" e linhas de expressão que aparecem mesmo em repouso.' },
+      { symptom: 'Rugas finas ao redor dos olhos', detail: 'Pele com aspecto "craquelado" e com perda de elasticidade e hidratação.' },
       { symptom: 'Pele ressecada e com textura irregular', detail: 'A pele das pálpebras perdeu qualidade, com aspecto enrugado e sem brilho natural.' },
-      { symptom: 'Manchas e irregularidades de pigmentação', detail: 'Manchas senis ou de fotoenvelhecimento na região palpebral.' },
       { symptom: 'Complemento pós-blefaroplastia', detail: 'Para quem já fez a cirurgia e quer refinar ainda mais a qualidade da pele das pálpebras.' },
     ],
 
@@ -275,7 +270,7 @@ export const PROCEDURES_DATA = {
     faq: [
       { q: 'É doloroso?', a: 'O procedimento é realizado com anestesia tópica e/ou local. Durante o processo há sensação de calor — após, o desconforto é semelhante a uma queimadura solar leve, manejável com medicação.' },
       { q: 'Funciona em todos os tipos de pele?', a: 'A técnica pode ser adaptada, mas requer avaliação cuidadosa em peles mais escuras (Fitzpatrick IV-VI) para evitar manchas. O preparo pré-laser é fundamental nesses casos.' },
-      { q: 'Quantas sessões são necessárias?', a: 'Em geral, uma única sessão com laser ablativo fracionado já entrega resultado expressivo. Casos mais leves podem se beneficiar de protocolos não-ablativos com múltiplas sessões.' },
+      { q: 'Quantas sessões são necessárias?', a: 'Em geral, uma única sessão com laser fracionado já entrega resultado expressivo. Alguns casos podem se beneficiar de mais sessões.' },
     ],
   },
 
@@ -320,7 +315,6 @@ export const PROCEDURES_DATA = {
     faq: [
       { q: 'A expressão fica artificial ou "congelada"?', a: 'Não, quando aplicada com técnica correta e dose adequada. A Dra. Larissa prioriza um resultado natural, que suaviza sem paralisar a expressão.' },
       { q: 'Pode ser combinada com outros procedimentos?', a: 'Sim. A toxina botulínica combina muito bem com ressurfacing laser, preenchimentos e procedimentos cirúrgicos, potencializando e prolongando os resultados.' },
-      { q: 'O tratamento funcional tem cobertura de plano?', a: 'O blefarospasmo e o espasmo hemifacial podem ter cobertura de plano de saúde. A Dra. Larissa orienta sobre a documentação e laudo necessários.' },
     ],
   },
 }

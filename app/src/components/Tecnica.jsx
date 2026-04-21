@@ -101,6 +101,7 @@ function TechBlock({ block, index }) {
               loading="lazy"
               decoding="async"
               referrerPolicy="no-referrer"
+              className="tech-image"
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -181,7 +182,14 @@ export default function Tecnica() {
       </div>
 
       <style>{`
+        .tech-image {
+          transform: scale(1.1);
+          transform-origin: center;
+        }
         @media (min-width: 768px) {
+          .tech-image {
+            transform: none;
+          }
           .tech-block {
             grid-template-columns: 1fr 1fr !important;
             gap: 4rem !important;

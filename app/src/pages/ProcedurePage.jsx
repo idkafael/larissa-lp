@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import {
   ArrowLeft, ArrowRight, CheckCircle, WhatsappLogo,
   Eye, Sparkle, Drop, ArrowUp, Sun, Leaf, Star,
-  Clock, Warning, Shield, Medal,
+  Clock, Warning, Shield, Medal, Globe,
 } from '@phosphor-icons/react'
 import { waLink } from '../data/procedures'
 
@@ -199,8 +199,9 @@ function ProcedureHero({ proc, waHref }) {
           width: '100%',
         }}>
           {[
-            { icon: Shield, label: 'Cirurgiã especialista em pálpebras' },
-            { icon: Medal, label: 'Fellowship UCLA · SBCPO' },
+            { icon: Shield, label: 'Especialista em pálpebras (SBCPO)' },
+            { icon: Medal, label: 'Fellowship UFBA' },
+            { icon: Globe, label: 'Observership UCLA' },
             { icon: Star,  label: 'Avaliação 5★ no Google' },
           ].map(({ icon: Icon, label }) => (
             <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
@@ -627,7 +628,7 @@ function FinalCTA({ proc, waHref, onBack }) {
           lineHeight: 1.75,
           maxWidth: '42ch',
         }}>
-          A avaliação com a Dra. Larissa é o primeiro passo — sem compromisso, sem pressão.
+          A avaliação com a Dra. Larissa é o primeiro passo — sem pressão.
           Só uma conversa honesta sobre o que é possível para o seu caso.
         </p>
 

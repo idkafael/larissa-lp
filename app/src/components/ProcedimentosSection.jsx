@@ -24,7 +24,7 @@ const PROCEDURES = [
     icon: Sparkle,
     tag: 'Laser',
     name: 'Blefaroplastia Estruturada a laser',
-    desc: 'Abordagem completa com remoção de pele e redistribuição de gordura para resultado harmonioso e duradouro.',
+    desc: 'Blefaroplastia superior e correção de ptose para melhora da abertura do olhar.',
     slug: 'blefaroplastia-estruturada',
   },
   {
@@ -292,7 +292,7 @@ export default function ProcedimentosSection({ navigate }) {
             Não sabe qual procedimento é ideal para você? A avaliação individualizada define o melhor caminho.
           </p>
           <a href="#captacao" className="btn-primary">
-            Agendar avaliação gratuita
+            Agendar avaliação
             <span className="arrow-icon">
               <ArrowRight size={14} weight="bold" />
             </span>

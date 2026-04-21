@@ -53,6 +53,7 @@ function ReelSlide({ slide, isActive, slideRef }) {
       />
       {/* Tags sobrepostas no canto inferior esquerdo */}
       <div
+        className="slide-overlay"
         style={{
           position: 'absolute',
           left: 0,
@@ -360,6 +361,9 @@ export default function CasosClinicosSection() {
 
         <style>{`
           .casos-scroll::-webkit-scrollbar { display: none; }
+          @media (max-width: 767px) {
+            .slide-overlay { display: none !important; }
+          }
         `}</style>
 
         <p
